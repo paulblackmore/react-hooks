@@ -59,7 +59,7 @@ const initialState: ApiResponse = {
   data: { firstName: '', secondName: '' },
 };
 
-export const UseActionState = () => {
+export const ActionStateComponent = () => {
   const [formState, formAction, isPending] = useActionState(
     saveUser,
     initialState
