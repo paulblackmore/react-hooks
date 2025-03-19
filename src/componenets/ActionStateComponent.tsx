@@ -68,7 +68,7 @@ export const ActionStateComponent = () => {
   const findInputError = (name: string) => {
     if (formState.error) {
       const parsedError = JSON.parse(formState.error);
-      const error = parsedError?.find((error: any) => error.path[0] === name);
+      const error = parsedError?.find((error) => error.path[0] === name);
       return error?.message;
     }
     return undefined;

@@ -5,6 +5,7 @@ import ImperativeHandleComponent, {
 
 export const ImperativeHandleParent = () => {
   const counterRef = useRef<CounterRef | null>(null);
+
   return (
     <div>
       <ImperativeHandleComponent ref={counterRef} />

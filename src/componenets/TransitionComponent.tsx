@@ -5,7 +5,7 @@ export const TransitionComponent = () => {
   const [list, setList] = useState<string[]>([]);
   const [isPending, startTransition] = useTransition();
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
 
     startTransition(() => {
@@ -16,6 +16,7 @@ export const TransitionComponent = () => {
       setList(list);
     });
   };
+
   return (
     <div className='flex flex-col items-start'>
       <h1 className='mb-10'>Practice: useTransition</h1>
@@ -29,9 +30,11 @@ export const TransitionComponent = () => {
           onChange={handleChange}
         />
       </label>
-      {isPending
-        ? 'Loading...'
-        : list.map((item, index) => <p key={index}>{item}</p>)}
+      {isPending ? (
+        <p>Loading...</p>
+      ) : (
+        list.map((item, index) => <p key={index}>{item}</p>)
+      )}
     </div>
   );
 };
